@@ -1,6 +1,11 @@
 import sys
 input=sys.stdin.readline
 
+""" 
+숫자들을 입력받고, 그 숫자들을 만들기위해 필요한 연산을 출력.
+stack=[0] 으로 정의해서 처음부터 쓰는 방법. 
+"""
+
 N=int(input())
 
 # 데이터를 받음
