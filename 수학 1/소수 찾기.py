@@ -1,17 +1,17 @@
-n = int(input())
-s = list(map(int, input().split()))
+# n = int(input())
+# s = list(map(int, input().split()))
 
-count = 0
-for i in range(n):
-    a = True
-    c = 2
-    while c-1 < s[i]//2:
-        if s[i] % c == 0:
-            a = False    
-            break
-        c += 1
-    if a and s[i] != 1: count += 1
-print(count)
+# count = 0
+# for i in range(n):
+#     a = True
+#     c = 2
+#     while c-1 < s[i]//2:
+#         if s[i] % c == 0:
+#             a = False    
+#             break
+#         c += 1
+#     if a and s[i] != 1: count += 1
+# print(count)
 
 """
 2
