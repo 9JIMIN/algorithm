@@ -21,7 +21,7 @@
 #     else:
 #         g = gcd(g, abs(alist[i] - S))
 
-print(g)
+# print(g)
 
 """ 
 다른 답
