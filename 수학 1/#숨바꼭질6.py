@@ -31,7 +31,7 @@
  """
 
 def gcd(a,b):
-    return gcd(b,a%b) if b>0 else a
+    return gcd(b%a,a) if a>0 else b
 
 N,S = map(int,input().split())
 L = list(map(int,input().split()))

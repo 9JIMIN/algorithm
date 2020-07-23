@@ -16,19 +16,13 @@
 
 - 그렇다. 2진수라는 숫자규칙을 찾아가는 문제는 나누기에 해답이 있다.. 
  """
-import sys 
-N = int(sys.stdin.readline()) 
-
-if not N: 
-    sys.stdout.write('0')
-    exit() 
-res = '' 
-while N: 
-    if N%(-2): 
-        res = '1' + res 
-        N = N//-2 + 1 
-    else: 
-        res = '0' + res 
-        N //= -2 
-
-sys.stdout.write(res)
+n = int(input())
+ans = ""
+while n != 1 and n != 0:
+    n = -(-n//-2)
+    ans = str(n%2) + ans
+    print(n, ans)
+if n == 0:
+    print(0)
+else:
+    print("1"+ans)
