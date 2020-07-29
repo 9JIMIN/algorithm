@@ -10,7 +10,7 @@ for i in range(1, 101):
             elif j == 0:
                 num[i][j] = num[i-1][j+1]
             elif j == 9:
-                num[i][j] = num[i-1][j-11]
+                num[i][j] = num[i-1][j-1]
                 
-N = int(input())             
+N = int(input())
 print(sum(num[N][1:10]) % 1000000000)

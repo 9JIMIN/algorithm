@@ -8,6 +8,7 @@
 - 수학
     - [수학-1.md](https://github.com/9JIMIN/algorithm/blob/master/수학-1.md)
 - 다이나믹 프로그래밍
+    - [다이나믹-1.md](https://github.com/9JIMIN/algorithm/blob/master/다이나믹-1.md)
 - 브루트 포스
 <p align="center">
 <img src="./patience.jpg" width="600" >
