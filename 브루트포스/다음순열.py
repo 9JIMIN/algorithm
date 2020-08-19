@@ -1,17 +1,46 @@
-N = int(input())
-A = list(map(int, input().split()))
+n = int(input())
+num = list(map(int, input().split()))
 
-i = N-1
-while i>0 and A[i-1]>A[i]:
+i = n-1
+j = n-1
+
+while i>0 and num[i-1]>num[i]:
     i -= 1
 
 if i == 0:
     print(-1)
     exit()
 
-j = N-1
-while A[i-1]>A[j]:
+while num[i-1]>num[j]:
     j -= 1
 
-A[i-1], A[j] = A[j], A[i-1]
-print(*(A[:i]+list(reversed(A[i:]))))
+num[i-1], num[j] = num[j], num[i-1]
+print(*(num[:i]+list(reversed(num[i:]))))
+
+# def next_permutation(a):
+#     n = len(a) - 1
+#     i = n
+#     while i > 0 and a[i-1] >= a[i]:
+#         i -= 1
+#     if i == 0:
+#         return False
+#     j = n
+#     while a[i-1] >= a[j]:
+#         j -= 1
+#     a[i-1], a[j] = a[j], a[i-1]
+#     j = n
+#     while i < j:
+#         a[i], a[j] = a[j], a[i]
+#         i += 1
+#         j -= 1
+#     return True
+
+# n = int(input())
+# a = list(map(int, input().split()))
+
+# if next_permutation(a) is True:
+#     for i in a:
+#         print(i, end=' ')
+#     print()
+# else:
+#     print(-1)
