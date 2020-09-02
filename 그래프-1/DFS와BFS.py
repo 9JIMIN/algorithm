@@ -1,27 +1,27 @@
 n, m, v = map(int, input().split())
-matrix = [[0] * (n + 1) for _ in range(n + 1)]
+rel = [[] for _ in range(n+1)] # 노드를 1,2,3.. 이렇게 하기 때문에 0번은 비워줌.
+visited = []
+
 for _ in range(m):
-    line = list(map(int, input().split()))
-    matrix[line[0]][line[1]] = 1
-    matrix[line[1]][line[0]] = 1
+    a, b = map(int, input().split())
+    rel[a].append(b)
+    rel[b].append(a)
 
-def bfs(start):
-    visited = [start]
-    queue = [start]
-    while queue:
-        n = queue.pop(0)
-        for c in range(len(matrix[start])):
-            if matrix[n][c] == 1 and (c not in visited):
-                visited.append(c)
-                queue.append(c)
+def bfs(x):
+    visited.append(x)
+    for a in visited:
+        for b in sorted(rel[a]):
+            if b not in visited:
+                visited.append(b)
     return visited
 
-def dfs(start, visited):
-    visited += [start]
-    for c in range(len(matrix[start])):
-        if matrix[start][c] == 1 and (c not in visited):
-            dfs(c, visited)
+def dfs(x):
+    visited.append(x)
+    for a in sorted(rel[x]):
+        if a not in visited:
+            dfs(a)
     return visited
 
-print(*dfs(v,[]))
+print(*dfs(v))
+visited = []
 print(*bfs(v))
