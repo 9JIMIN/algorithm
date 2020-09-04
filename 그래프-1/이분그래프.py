@@ -1,34 +1,37 @@
-from collections import deque 
-import sys 
+# bfs로 탐색하며, 각 노드의 색을 1, 2로 저장한다. 
+# 현재노드에 연결된 노드의 색이 같으면, 탐색을 중단하고 NO를 출력.
+# 큐가 빌때까지 탐색을 계속한다.
+from collections import deque
+from sys import stdin
+input = stdin.readline
 
-for tc in range(int(sys.stdin.readline())): 
-    v, e = map(int, sys.stdin.readline().split()) 
-    link = [[] for _ in range(v+1)] 
-    for _ in range(e): 
-        a, b = map(int, sys.stdin.readline().split()) 
-        link[a].append(b) 
-        link[b].append(a) 
-        
-    color = [0] * (v+1) 
-    STOP = False 
-    
+for _ in range(int(input())):
+    v, e = map(int, input().split())
+    link = [[] for _ in range(v+1)]
+    for _ in range(e):
+        a, b = map(int, input().split())
+        link[a].append(b)
+        link[b].append(a)
+
+    color = [0 for _ in range(v+1)]
+    stop = False
+
     for i in range(1, v+1): 
-        if STOP: break 
-        if color[i] > 0: continue 
+        if stop: break
+        if color[i]: continue
+
+        color[i] = 1
+        queue = deque([i])
         
-        color[i] = 1 
-        queue = deque([i]) 
-        
-        while queue and not STOP: 
-            q = queue.popleft() 
-            c = 3 - color[q] 
-            
-            for l in link[q]: 
-                if color[l] == 0: 
-                    color[l] = c 
-                    queue.append(l) 
-                elif color[l] == color[q]: 
-                    STOP = True 
-                    break 
-    
-    print("YES" if not STOP else "NO")
+        while queue and not stop:
+            q = queue.popleft()
+            diffcolor = 3 - color[q]
+            for k in link[q]:
+                if color[k] == 0:
+                    color[k] = diffcolor
+                    queue.append(k)
+                elif color[k] == color[q]:
+                    stop = True
+                    break
+
+    print('YES' if not stop else 'NO')
