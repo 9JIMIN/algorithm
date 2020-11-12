@@ -1,14 +1,11 @@
 # 알고리즘 풀이
-
+- 알고리즘 해결 코드 저장소
 - 언어: Python
-- 문제: [백준](https://www.acmicpc.net/workbook/top)
-***
-- [자료구조-1](https://github.com/9JIMIN/algorithm/blob/master/자료구조-1.md)
-- [수학-1](https://github.com/9JIMIN/algorithm/blob/master/수학-1.md)
-- [다이나믹 프로그래밍-1](https://github.com/9JIMIN/algorithm/blob/master/다이나믹프로그래밍-1.md)
-- [브루트포스-1](https://github.com/9JIMIN/algorithm/blob/master/브루트포스-1.md)
+- 문제: [백준 온라인 저지](https://www.acmicpc.net/workbook/top)
 
-<p align="center">
-<img src="./patience.jpg" width="600" >
-<p align="center">참는자에게 복이 있나니..</p>
-</p>
+- 풀이 내용
+    - [자료구조]()
+    - [수학]()
+    - [브루트포스]()
+    - [다이나믹 프로그래밍]()
+    - [그래프]()
